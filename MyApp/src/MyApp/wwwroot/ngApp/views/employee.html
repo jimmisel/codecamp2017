@@ -1,0 +1,52 @@
+﻿<h2>Employee intake</h2>
+<style>
+    .ng-invalid.ng-touched {
+        background-color: #FA787E;
+    }
+</style>
+
+<form name="employeeForm" novalidate ng-submit="employee.add()">
+    <div>
+        <label>
+            First Name:
+            <input name="firstName" ng-model="employee.firstName" type="text" ng-required="true" />
+            <span ng-show="employeeForm.model.$touched && employeeForm.model.$error.required" class="error">
+                employee first name is required.
+            </span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Last Name:
+            <input name="lastName" ng-model="employee.lastName" type="text" ng-required="true" />
+            <span ng-show="employeeForm.model.$touched && employeeForm.model.$error.required" class="error">
+                employee last name is required.
+            </span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Age:
+            <input name="age" ng-model="employee.age" type="number" ng-required="true" />
+            <span ng-show="employeeForm.price.$touched && employeeForm.price.$error.required" class="error">
+                Age is required.
+            </span>
+            <span ng-show="employeeForm.price.$touched && employeeForm.price.$error.number" class="error">
+                Age must be a number.
+            </span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Employment type:
+            <input name="type" ng-model="employee.type" type="text" ng-required="true" />
+            <span ng-show="employeeForm.model.$touched && employeeForm.model.$error.required" class="error">
+                employee type is required.
+            </span>
+        </label>
+    </div>
+
+    <div>
+        <input type="submit" value="Add" ng-disabled="employeeForm.$invalid" />
+    </div>
+</form>

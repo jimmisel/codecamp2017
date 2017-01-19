@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="RoutingApp">
+<head>
+    <title></title>
+   
+    <base href="/">
+</head>
+
+    <body ng-controller="MainController as main">
+        <a ui-sref="Page1">Page 1</a> | <a ui-sref="Page2">Page 2</a> | <a ui-sref="Nowhere">Nowhere</a>
+        <hr />
+        $state.current.templateUrl = {{main.$state.current.templateUrl}}
+        <hr />
+
+        <ui-view></ui-view>
+
+
+
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="~/MyApp/myApp.js"></script>
+        <script src="~/MyApp/Controllers.js"></script>
+    </body>
+</html>
